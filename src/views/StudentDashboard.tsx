@@ -30,7 +30,7 @@ export const StudentDashboard: React.FC = () => {
   const gradeOrDegree = isSchool ? `${schoolProfile.board} • ${schoolProfile.grade}` : `${collegeProfile.university} • ${collegeProfile.department}`;
   const activeSubject = subjects.find((subject) => subject.name === currentSubject);
   const activeChapter = activeSubject?.chapters.find((chapter) => chapter.title.includes(currentChapter)) || activeSubject?.chapters[0];
-  const mastery = isSchool ? (activeChapter?.completedPercentage ?? 0) : 0;
+  const mastery = isSchool ? 0 : 0;
   const completedConcepts = isSchool ? (activeChapter?.completedConcepts ?? 0) : 0;
   const totalConcepts = isSchool ? (activeChapter?.conceptsCount ?? 0) : 0;
 
